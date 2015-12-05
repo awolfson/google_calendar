@@ -400,6 +400,7 @@ module Google
     # Wraps the `send` method. Send an event related request to Google.
     #
     def send_events_request(path_and_query_string, method, content = '')
+      puts "/calendars/#{CGI::escape @id}/events#{path_and_query_string}";Kernel.abort
       @connection.send("/calendars/#{CGI::escape @id}/events#{path_and_query_string}", method, content)
     end
   end
